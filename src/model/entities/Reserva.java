@@ -48,6 +48,18 @@ public class Reserva {
 		this.checkout = checkout;
 	}
 	
+	public String atualizarDatas(Date checkin, Date checkout){
+		
+		Date dataAtual = new Date();
+		if(!checkout.before(dataAtual) || checkout.before(dataAtual)){
+			
+			return "As datas de reserva devem ser atualizadas para datas futuras";
+		}
+		
+		this.checkout = checkout;
+		return null; //Se retornar null não deu nenhum erro !
+	}
+	
 	@Override
 	public String toString(){
 		StringBuilder build = new StringBuilder();

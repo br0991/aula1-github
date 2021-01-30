@@ -11,6 +11,7 @@ public class Program {
 
 	public static void main(String[] args) throws ParseException {
 		
+		Reserva reserva;
 		Scanner sc = new Scanner(System.in);
 		SimpleDateFormat simple = new SimpleDateFormat("dd/MM/yyyy");
 		
@@ -29,9 +30,18 @@ public class Program {
 		}
 		else{
 			
-			Reserva reserva = new Reserva(numero, checkin, checkout);
+			reserva = new Reserva(numero, checkin, checkout);
 			System.out.println(reserva);
 		}
+		
+		String erro = reserva.atualizarDatas(checkin, checkout);
+		if(erro != null){
+			System.out.println("Erro na reserva: "  + erro);
+		}
+		else{
+			System.out.println(reserva);
+		}
+		
 		
 		
 		sc.close();
