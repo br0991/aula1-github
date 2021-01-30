@@ -39,7 +39,6 @@ public class Reserva {
 	public long duracao() {
 
 		long diff = checkout.getTime() - checkin.getTime();
-		System.out.println(diff);
 		return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
 	}
 
@@ -52,6 +51,7 @@ public class Reserva {
 	@Override
 	public String toString(){
 		StringBuilder build = new StringBuilder();
+		System.out.println("RESERVA: ");
 		build.append("Quarto.: " + numeroDoQuarto);
 		build.append(" , Check-in.: " + checkin);
 		build.append(" , Check-out.: " + checkout);
